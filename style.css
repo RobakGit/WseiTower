@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: silver;
+    background-image: 
+        linear-gradient(335deg, rgb(37, 0, 0) 23px, transparent 23px), 
+        linear-gradient(155deg, rgb(71, 0, 0) 23px, transparent 23px), 
+        linear-gradient(335deg, rgb(37, 0, 0) 23px, transparent 23px), 
+        linear-gradient(155deg, rgb(71, 0, 0) 23px, transparent 23px); 
+    background-size: 58px 58px; 
+    background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    /* border: 2px solid blue; */
+}
+
+#wseiMan {
+    width: 53px; 
+    height: 50px; 
+    /* background: red; */
+    position: absolute;
+}
+
+.manElement {
+    position: relative;
+    background: greenyellow;
+}
+
+.manElement:nth-of-type(1){
+    width: 10%;
+    height: 10%;
+}
+
+.manElement:nth-of-type(2){
+    width: 20%;
+    height: 20%;
+    top: 10%;
+}
+
+.manElement:nth-of-type(3){
+    width: 20%;
+    height: 20%;
+    left: 20%;
+    top: 10%;
+}
+
+.manElement:nth-of-type(4){
+    width: 20%;
+    height: 20%;
+    left: 20%;
+    top: -50%;
+}
+
+.manElement:nth-of-type(5){
+    width: 20%;
+    height: 100%;
+    left: 40%;
+    top: -70%;
+}
+
+.manElement:nth-of-type(6){
+    width: 30%;
+    height: 45%;
+    left: 60%;
+    top: -170%;
+    border-radius: 0 100% 0 0;
+}
+
+.manElement:nth-of-type(7){
+    width: 30%;
+    height: 60%;
+    left: 60%;
+    top: -175%;
+}
+
+.manElement:nth-of-type(8){
+    background: none;
+    left: 70%;
+    top: -250%;
+    border-top: 10px solid transparent;
+    border-left: 20px solid #cfff7f;
+    border-bottom: 10px solid transparent;
+}
+
+.manElement:nth-of-type(9){
+    width: 30%;
+    height: 40%;
+    left: 70%;
+    top: -270%;
+    border-radius: 0 30% 40% 0;
+}
+
+.manElement:nth-of-type(10){
+    width: 30%;
+    height: 10%;
+    left: 76%;
+    top: -292%;
+    border-radius: 50%;
+}
+
+.block {
+    background: #008000;
+}
+
+#scoreBoard {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.right {
+    background: #004000;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+.left {
+    background: #004000;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+#finishPill {
+    border-radius: 0 0 100% 100% !important;
+}
+
+#finishPill::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 20px;
+    width: 2px;
+    height: 8px;
+    border: 0.1px #000 solid;
+    background-color: #ffd700;
+    font-size: 1px;
+    z-index: 1;
+}
+
+#finishPill::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 27px;
+    width: 6px;
+    height: 2px;
+    border: 0.1px #000 solid;
+    background-color: #ffd700;
+    color: #000000;
+    font-size: 1px;
+    z-index: 1;
+}
+
+.monster {
+    border-radius: 100% 100% 0 0 !important;
+}
+
+.monster::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    width: 3px;
+    height: 8px;
+    background-color: grey;
+    font-size: 1px;
+    z-index: 1;
+    animation-name: stepLeft;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.monster::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    width: 3px;
+    height: 8px;
+    background-color: grey;
+    font-size: 1px;
+    z-index: 1;
+    animation-name: stepRight;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#jumpBlock {
+    background-color: black;
+}
+
+#jumpBlock::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    width: 4px;
+    height: 15px;
+    background-color: #008000;
+}
+
+#jumpBlock::after {
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: 1px;
+    width: 4px;
+    height: 15px;
+    background-color: #008000;
+}
+
+@keyframes stepLeft {
+    0%   {background-color:grey; left: 0px; top:20px;}
+    25%  {background-color:#545454; left: 8px; top:20px;}
+    100% {background-color:grey; left: 0px; top:20px;}
+  }
+
+@keyframes stepRight {
+    0%   {background-color:grey; left: 15px; top:20px;}
+    25%   {background-color:grey; left: 15px; top:20px;}
+    75%  {background-color:#545454; left: 8px; top:20px;}
+    100% {background-color:grey; left: 15px; top:20px;}
+  }
